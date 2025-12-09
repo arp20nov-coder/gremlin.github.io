@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Click the Box Game</title>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: absolute;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Click the Box Game</h1>
+  <p>Click the red box to score points!</p>
+
+  <div id="box"></div>
+
+  <script>
+    let box = document.getElementById("box");
+    let score = 0;
+
+    function moveBox() {
+      box.style.top = Math.random() * 400 + "px";
+      box.style.left = Math.random() * 400 + "px";
+    }
+
+    box.onclick = function () {
+      score++;
+      alert("Score: " + score);
+      moveBox();
+    }
+
+    moveBox();
+  </script>
+</body>
+</html>
